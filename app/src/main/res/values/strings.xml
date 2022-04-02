@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tensor-HW5</string>
+    <string name="send_message_button">Send message</string>
+    <string name="message_to_send">What a wonderful message</string>
+    <string name="ellipsis">…</string>
+    <!-- Should be "All messages are read" -->
+    <string name="messages_read">All messages is read</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="read_button">Read</string>
+</resources>
