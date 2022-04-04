@@ -1,16 +1,18 @@
 package com.example.tensor_hw5
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.fragment.app.activityViewModels
 import com.example.tensor_hw5.databinding.FragmentSenderBinding
 
 class SenderFragment : Fragment() {
     private lateinit var binding: FragmentSenderBinding
+
+    private val viewModel: SharedViewModel by activityViewModels()
 
     companion object {
         private const val TAG = "SenderFragment"
@@ -19,7 +21,7 @@ class SenderFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSenderBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -28,18 +30,18 @@ class SenderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.sendMessageButton.setOnClickListener {
+            sendMessage(R.string.message_to_send)
             replaceWithReceiverFragment()
         }
     }
 
+    private fun sendMessage(@StringRes resId: Int) = viewModel.setId(resId)
+
     private fun replaceWithReceiverFragment() {
-        val receiverFragment = ReceiverFragment.newInstance(R.string.message_to_send)
         requireActivity().supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container_view, receiverFragment)
+            .replace(R.id.fragment_container_view, ReceiverFragment())
             .addToBackStack(TAG)
             .commit()
     }
-
-
 }
