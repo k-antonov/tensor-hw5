@@ -15,7 +15,7 @@ class SenderFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
 
     companion object {
-        private const val TAG = "SenderFragment"
+        private val TAG = SenderFragment::class.java.simpleName
     }
 
     override fun onCreateView(

@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     companion object {
-        private const val TAG = "MainActivity"
+        private val TAG = MainActivity::class.java.simpleName
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +32,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        Log.d(TAG, "Back stack entries count: ${supportFragmentManager.backStackEntryCount}")
+        Log.d(TAG, "Back stack entry count: ${supportFragmentManager.backStackEntryCount}")
     }
 }

@@ -15,13 +15,13 @@ class ReceiverFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
 
     companion object {
-        private const val TAG = "ReceiverFragment"
+        private val TAG = ReceiverFragment::class.java.simpleName
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(
-            TAG, "Back stack entries count: ${
+            TAG, "Back stack entry count: ${
                 requireActivity().supportFragmentManager.backStackEntryCount
             }"
         )
