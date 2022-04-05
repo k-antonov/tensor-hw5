@@ -47,5 +47,5 @@ class ReceiverFragment : Fragment() {
         }
     }
 
-    private fun markAsRead() = viewModel.setId(R.string.messages_read)
+    private fun markAsRead() = viewModel.setMessageId(R.string.messages_read)
 }

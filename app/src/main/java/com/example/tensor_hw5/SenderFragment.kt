@@ -35,7 +35,7 @@ class SenderFragment : Fragment() {
         }
     }
 
-    private fun sendMessage(@StringRes resId: Int) = viewModel.setId(resId)
+    private fun sendMessage(@StringRes resId: Int) = viewModel.setMessageId(resId)
 
     private fun replaceWithReceiverFragment() {
         requireActivity().supportFragmentManager

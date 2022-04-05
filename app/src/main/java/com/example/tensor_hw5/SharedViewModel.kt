@@ -11,7 +11,7 @@ class SharedViewModel : ViewModel() {
     val messageId: LiveData<Int>
         get() = mutableMessageId
 
-    fun setId(@StringRes resId: Int) {
+    fun setMessageId(@StringRes resId: Int) {
         mutableMessageId.value = resId
     }
 }
